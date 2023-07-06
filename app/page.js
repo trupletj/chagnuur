@@ -2,6 +2,11 @@ import Header from "@/app/components/Header";
 import LandingPage from "./components/Home/LandingPage";
 import CoursesSec from "./components/Home/CoursesSec";
 import Learnings from "./components/Home/Learnings";
+import Educators from "./components/Home/Educators";
+import WhySec from "./components/Home/WhySec";
+import Rest from "./components/Home/Rest";
+import Illustration from "./components/Home/Illustration";
+import Footer from "./components/Footer";
 
 export default function Home() {
   return (
@@ -16,8 +21,15 @@ export default function Home() {
       {/* What will you learn today? - LIST */}
       <Learnings />
       {/* Top health educators  */}
+      <Educators />
       {/* Why you'll love learning with Ausmed */}
-      {/* email input */}
+      <WhySec />
+      {/* Rest */}
+      <Rest />
+      {/* Illu */}
+      <Illustration />
+      {/* Footer */}
+      <Footer />
     </main>
   );
 }

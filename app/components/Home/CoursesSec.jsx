@@ -102,7 +102,7 @@ function CoursesSec() {
       setChildWidth(parentWidth / 3.2);
       setPerPage(3);
     } else if (parentWidth >= 1024 && parentWidth < 1920) {
-      setChildWidth(parentWidth / 4);
+      setChildWidth(parentWidth / 4 - 10);
       setPerPage(4);
     } else {
       setChildWidth(300);
@@ -218,7 +218,7 @@ function CoursesSec() {
               >
                 {/* image */}
                 <div
-                  className={`rounded overflow-hidden relative`}
+                  className={`rounded-xl overflow-hidden relative`}
                   style={{ width: childWidth, height: childWidth / 2 }}
                 >
                   <Image
