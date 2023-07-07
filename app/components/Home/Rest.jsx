@@ -4,7 +4,7 @@ import bg from "@/app/assets/landing.png";
 function Rest() {
   return (
     <div className="w-full   bg-[#001540]">
-      <div className="container h-[396px]">
+      <div className="md:container w-full h-[396px]">
         <div
           className="w-full"
           style={{

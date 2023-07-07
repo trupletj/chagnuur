@@ -8,6 +8,13 @@ import React, {
 } from "react";
 import Image from "next/image";
 
+//images
+import img1 from "@/app/assets/20200702_cover_v2.jpg";
+import img2 from "@/app/assets/20210802_cover_2.jpg";
+import img3 from "@/app/assets/AUSLEC2044v1.jpg";
+import img4 from "@/app/assets/AUSLEC2045v1.jpg";
+import img5 from "@/app/assets/AUSLEC2060v1.jpg";
+
 //hooks
 import useWindowSize from "@/app/hooks/useWindowSize";
 const texts = [
@@ -34,24 +41,24 @@ const texts = [
 ];
 const thumbs = [
   {
-    url: "https://picsum.photos/600/300",
+    url: img1,
     title: "114  adsafasd fasd fasdf asdf asdf khgfds s sss",
   },
-  { url: "https://picsum.photos/600/300", title: "2" },
-  { url: "https://picsum.photos/600/300", title: "3" },
-  { url: "https://picsum.photos/600/300", title: "4" },
-  { url: "https://picsum.photos/600/300", title: "5" },
-  { url: "https://picsum.photos/600/300", title: "6" },
-  { url: "https://picsum.photos/600/300", title: "7" },
-  { url: "https://picsum.photos/600/300", title: "8" },
+  { url: img2, title: "2" },
+  { url: img3, title: "3" },
+  { url: img4, title: "4" },
+  { url: img5, title: "5" },
+  { url: img3, title: "6" },
+  { url: img2, title: "7" },
+  { url: img5, title: "8" },
   { url: "https://picsum.photos/600/300", title: "9" },
-  { url: "https://picsum.photos/600/300", title: "10" },
+  { url: img1, title: "10" },
   { url: "https://picsum.photos/600/300", title: "11" },
-  { url: "https://picsum.photos/600/300", title: "12" },
+  { url: img3, title: "12" },
   { url: "https://picsum.photos/600/300", title: "13" },
 ];
 function CoursesSec() {
-  const [currentCategory, setCurrentCategory] = useState(2);
+  const [currentCategory, setCurrentCategory] = useState(0);
   const categoryTitleRef = useRef(null);
   const carouselRef = useRef(null);
   const windowSize = useWindowSize();
@@ -223,7 +230,7 @@ function CoursesSec() {
                 >
                   <Image
                     fill
-                    src="https://picsum.photos/600/400"
+                    src={thumb.url}
                     alt="custom image"
                     style={{ objectFit: "cover" }}
                   />
