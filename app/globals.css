@@ -88,3 +88,11 @@
 .selection-active {
   background: #f44f6c;
 }
+
+.left-bg {
+  background: linear-gradient(90deg, #faf6f2 14.58%, rgba(250, 246, 242, 0));
+}
+
+.right-bg {
+  background: linear-gradient(270deg, #faf6f2 14.58%, rgba(250, 246, 242, 0));
+}
