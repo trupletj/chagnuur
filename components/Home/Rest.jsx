@@ -1,5 +1,5 @@
 import React from "react";
-import bg from "@/app/assets/landing.png";
+import bg from "assets/landing.png";
 
 function Rest() {
   return (

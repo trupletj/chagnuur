@@ -1,8 +1,8 @@
 import React from "react";
 import Image from "next/image";
-import easy from "@/app/assets/Easy.svg";
-import effective from "@/app/assets/Effective.svg";
-import reliable from "@/app/assets/Reliable.svg";
+import easy from "assets/Easy.svg";
+import effective from "assets/Effective.svg";
+import reliable from "assets/Reliable.svg";
 
 function WhySec() {
   return (

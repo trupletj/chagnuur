@@ -9,14 +9,14 @@ import React, {
 import Image from "next/image";
 
 //images
-import img1 from "@/app/assets/20200702_cover_v2.jpg";
-import img2 from "@/app/assets/20210802_cover_2.jpg";
-import img3 from "@/app/assets/AUSLEC2044v1.jpg";
-import img4 from "@/app/assets/AUSLEC2045v1.jpg";
-import img5 from "@/app/assets/AUSLEC2060v1.jpg";
+import img1 from "assets/20200702_cover_v2.jpg";
+import img2 from "assets/20210802_cover_2.jpg";
+import img3 from "assets/AUSLEC2044v1.jpg";
+import img4 from "assets/AUSLEC2045v1.jpg";
+import img5 from "assets/AUSLEC2060v1.jpg";
 
 //hooks
-import useWindowSize from "@/app/hooks/useWindowSize";
+import useWindowSize from "hooks/useWindowSize";
 const texts = [
   "Text 1 dasd d ",
   "Text 2 fasdfasd ",

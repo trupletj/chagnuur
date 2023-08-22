@@ -1,5 +1,6 @@
 "use client";
 import React, { useRef, useState, useLayoutEffect } from "react";
+import { motion } from "framer-motion";
 
 const data = [
   {
@@ -57,7 +58,12 @@ function Learnings() {
   return (
     <div className="w-full py-20 pl-[150px]">
       <div className="grid grid-cols-4 w-full space-x-6">
-        <div className="col-span-1 flex flex-col items-start">
+        <motion.div
+          className="col-span-1 flex flex-col items-start"
+          initial={{ opacity: 0, y: 200, scale: 0.5 }}
+          whileInView={{ opacity: 1, y: 0, scale: 1 }}
+          transition={{ duration: 0.5 }}
+        >
           <h1 className="font-[700] text-[40px] leading-[52px] ">
             What will you learn today?
           </h1>
@@ -65,7 +71,7 @@ function Learnings() {
           <button className="py-[0.6rem] px-[1.5rem] bg-[#f44f6c] rounded-xl text-white font-[600] text-[1.25rem] mt-4 hover:bg-[#d70e30]">
             Get started
           </button>
-        </div>
+        </motion.div>
         <div className=" col-span-3 flex">
           {isFirst ? (
             <div className="relative w-[150px] left-[66px] h-full flex items-center  z-10 "></div>

@@ -1,8 +1,8 @@
 import React from "react";
 import Image from "next/image";
-import learn from "@/app/assets/learn-your-way.svg";
-import keep from "@/app/assets/keep-up-to-date.svg";
-import convenient from "@/app/assets/convenient-for-you.svg";
+import learn from "assets/learn-your-way.svg";
+import keep from "assets/keep-up-to-date.svg";
+import convenient from "assets/convenient-for-you.svg";
 
 function Illustration() {
   return (

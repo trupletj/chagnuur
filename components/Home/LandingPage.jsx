@@ -1,6 +1,6 @@
 import React from "react";
 import Image from "next/image";
-import bg from "@/app/assets/landing.png";
+import bg from "assets/landing.png";
 
 function LandingPage() {
   return (
@@ -33,6 +33,7 @@ function LandingPage() {
               <button className="rounded-full text-white hover:bg-[#f44f6c] bg-[#fa888e] py-3 px-5  flex-1 lg:flex-none ">
                 Get Started
               </button>
+
               <button className="rounded-full text-[#d70e30] hover:bg-[#f8c4cc] bg-[#fde3e7] py-3 px-5 flex-1 lg:flex-none ">
                 Ausemed organization
               </button>
