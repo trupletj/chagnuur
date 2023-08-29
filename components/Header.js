@@ -1,9 +1,10 @@
 "use client";
 import { useState, useEffect } from "react";
+import { useSession } from "next-auth/react";
 import Link from "next/link";
 export default function Header() {
   const [navbar, setNavbar] = useState(false);
-
+  const { user } = useSession();
   //background change
   const [color, setColor] = useState(0);
   useEffect(() => {
@@ -89,6 +90,9 @@ export default function Header() {
               </li>
               <li className="text-white">
                 <Link href="/contact">Анхны тусламж</Link>
+              </li>
+              <li className="text-white">
+                <Link href="/contact">user: {JSON.stringify(user)}</Link>
               </li>
             </ul>
           </div>
