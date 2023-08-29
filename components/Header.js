@@ -60,9 +60,12 @@ export default function Header() {
           </div>
         </div>
         <div className="flex-1 flex items-center justify-end">
-          <button className="rounded-full text-white hover:bg-[#f44f6c] bg-[#fa888e] py-2 px-5   lg:flex-none ">
+          <Link
+            href={"/api/auth/signin"}
+            className="rounded-full text-white hover:bg-[#f44f6c] bg-[#fa888e] py-2 px-5   lg:flex-none "
+          >
             Нэвтрэх
-          </button>
+          </Link>
         </div>
         <div className="md:hidden flex items-center">
           <button
