@@ -7,7 +7,15 @@ import Rest from "../components/Home/Rest";
 import Illustration from "../components/Home/Illustration";
 import Footer from "../components/Footer";
 
-export default function Home() {
+import { getServerSession } from "next-auth/next";
+import { redirect } from "next/navigation";
+import { options } from "/app/api/auth/[...nextauth]/options";
+
+export default async function Home() {
+  const session = await getServerSession(options);
+  if (session) {
+    redirect("/dashboard");
+  }
   return (
     <main className=" bg-[#faf6f2] m-0 p-0">
       {/* main image  */}
