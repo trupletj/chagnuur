@@ -25,7 +25,8 @@
     "**/*.ts",
     "**/*.tsx",
     "app/layout.js",
-    "app/api/auth/[...nextauth]/route.js"
+    "app/api/auth/[...nextauth]/route.js",
+    "app/api/auth/[...nextauth]/options.js"
   ],
   "exclude": ["node_modules"]
 }

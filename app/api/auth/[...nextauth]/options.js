@@ -1,4 +1,5 @@
 import CredentialsProvider from "next-auth/providers/credentials";
+import { NextAuthOptions } from "next-auth";
 
 export const options = {
   // Configure one or more authentication providers
@@ -30,6 +31,5 @@ export const options = {
         }
       },
     }),
-    // ...add more providers here
   ],
 };
