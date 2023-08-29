@@ -31,5 +31,6 @@ export const options = {
         }
       },
     }),
+    // ...add more providers here
   ],
 };
