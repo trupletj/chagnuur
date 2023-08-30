@@ -17,13 +17,13 @@ function NavbarUserButton() {
     );
   return (
     <div className="relative flex space-x-1">
-      <div className="rounded-full text-white bg-[#f44f6c] hover:bg-[#fa888e] h-9 px-4 flex items-center  cursor-pointer">
+      <div className="rounded-full text-white bg-[#f44f6c] hover:bg-[#fa888e] h-9 px-4 flex items-center  cursor-pointer ">
         Төлбөр
       </div>
       <div className=" w-9 h-9 rounded-full bg-[#f4b455] text-white font-bold flex justify-center items-center">
         {session?.user.name[0].toUpperCase()}
       </div>
-      <div className="absolute flex flex-col items-start top-[40px] w-[225px] space-y-2 right-0 bg-red-100 p-2 rounded">
+      <div className="absolute flex flex-col items-start top-[40px] w-[225px] space-y-2 right-0 bg-white p-2 rounded shadow-[0_6px_32px_rgba(23,29,41,0.1)] ">
         <button className="flex items-center space-x-1 p-1 rounded">
           <div className="w-4 h-4">
             <svg
@@ -31,7 +31,6 @@ function NavbarUserButton() {
               viewBox="0 0 24 24"
               fill="currentColor"
               stroke="currentColor"
-              _ngcontent-ausmed-cpd-state-c89
               className="sl-lg"
               style={{ position: "relative", bottom: 1 }}
             >
@@ -41,7 +40,6 @@ function NavbarUserButton() {
                 strokeLinecap="round"
                 strokeLinejoin="round"
                 strokeWidth="1.5"
-                _ngcontent-ausmed-cpd-state-c89
               />
               <path
                 d="M7.5 12.001a4.5 4.5 0 1 0 9 0 4.5 4.5 0 1 0-9 0Z"
@@ -49,7 +47,6 @@ function NavbarUserButton() {
                 strokeLinecap="round"
                 strokeLinejoin="round"
                 strokeWidth="1.5"
-                _ngcontent-ausmed-cpd-state-c89
               />
             </svg>
           </div>
@@ -62,7 +59,6 @@ function NavbarUserButton() {
               viewBox="0 0 24 24"
               fill="currentColor"
               stroke="currentColor"
-              _ngcontent-ausmed-cpd-state-c89
               className="sl-lg"
               style={{ position: "relative", bottom: 1 }}
             >
@@ -72,13 +68,11 @@ function NavbarUserButton() {
                 strokeLinecap="round"
                 strokeLinejoin="round"
                 strokeWidth="1.5"
-                _ngcontent-ausmed-cpd-state-c89
               />
               <path
                 d="M.75 12a11.25 11.25 0 1 0 22.5 0 11.25 11.25 0 1 0-22.5 0Z"
                 fill="none"
                 strokeWidth="1.5"
-                _ngcontent-ausmed-cpd-state-c89
               />
             </svg>
           </div>
@@ -92,14 +86,10 @@ function NavbarUserButton() {
             <svg
               viewBox="0 0 24 24"
               xmlns="http://www.w3.org/2000/svg"
-              _ngcontent-ausmed-cpd-state-c89
               className="sl-lg"
               style={{ position: "relative", bottom: 1 }}
             >
-              <g
-                transform="matrix(1,0,0,1,0,0)"
-                _ngcontent-ausmed-cpd-state-c89
-              >
+              <g transform="matrix(1,0,0,1,0,0)">
                 <path
                   d="M7.5 12.004L23.25 12.004"
                   fill="none"
@@ -107,7 +97,6 @@ function NavbarUserButton() {
                   strokeLinecap="round"
                   strokeLinejoin="round"
                   strokeWidth="1.5"
-                  _ngcontent-ausmed-cpd-state-c89
                 />
                 <path
                   d="M19.5 15.754L23.25 12.004 19.5 8.254"
@@ -116,7 +105,6 @@ function NavbarUserButton() {
                   strokeLinecap="round"
                   strokeLinejoin="round"
                   strokeWidth="1.5"
-                  _ngcontent-ausmed-cpd-state-c89
                 />
                 <path
                   d="M15.75,16.5V21a1.437,1.437,0,0,1-1.364,1.5H2.113A1.437,1.437,0,0,1,.75,21V3A1.436,1.436,0,0,1,2.113,1.5H14.386A1.437,1.437,0,0,1,15.75,3V7.5"
@@ -125,7 +113,6 @@ function NavbarUserButton() {
                   strokeLinecap="round"
                   strokeLinejoin="round"
                   strokeWidth="1.5"
-                  _ngcontent-ausmed-cpd-state-c89
                 />
               </g>
             </svg>

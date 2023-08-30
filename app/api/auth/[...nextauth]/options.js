@@ -4,14 +4,18 @@ export const options = {
   // Configure one or more authentication providers
   providers: [
     CredentialsProvider({
-      name: "Sign in",
+      name: "Email",
       credentials: {
         email: {
           label: "Email",
           type: "email",
           placeholder: "example@example.com",
         },
-        password: { label: "Password", type: "password" },
+        password: {
+          label: "Password",
+          type: "password",
+          placeholder: "password",
+        },
       },
       async authorize(credentials) {
         const { email, password } = credentials;
@@ -61,7 +65,15 @@ export const options = {
       return session;
     },
   },
-  // pages: {
-  //   signIn: "/auth/signin",
+  pages: {
+    signIn: "/auth/signin",
+    error: "/auth/error", // Error code passed in query string as ?error=
+  },
+
+  // theme: {
+  //   colorScheme: "light", // "auto" | "dark" | "light"
+  //   brandColor: "#f44f6c", // Hex color code
+  //   logo: "/assets/logo.png", // Absolute URL to image
+  //   buttonText: "#ffffff", // Hex color code
   // },
 };
