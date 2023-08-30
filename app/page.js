@@ -5,7 +5,7 @@ import Educators from "../components/Home/Educators";
 import WhySec from "../components/Home/WhySec";
 import Rest from "../components/Home/Rest";
 import Illustration from "../components/Home/Illustration";
-import Header from "components/Footer";
+import Header from "components/Header";
 import Footer from "../components/Footer";
 
 import { getServerSession } from "next-auth/next";
