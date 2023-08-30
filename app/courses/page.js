@@ -1,32 +1,59 @@
 import React from "react";
 import Image from "next/image";
-
+import Link from "next/link";
 async function getCourses() {
-  fetch("http://localhost:3000/api/courses");
+  try {
+    const res = await fetch(`${process.env.API_URL}/api/client/model/list`, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({
+        modelName: "Course",
+        select: "name , image",
+        relations: [],
+        filters: [],
+      }),
+    });
+    const courses = await res.json();
 
-  // console.log(res);
+    return courses;
+  } catch (error) {
+    console.log(error);
+  }
 }
 
 async function Courses() {
-  getCourses();
+  const courses = await getCourses();
 
+  if (!courses) {
+    <div>Loading</div>;
+  }
   return (
-    <div className="w-full ">
-      <div className="grid grid-cols-4 gap-4">
-        <div className="col-span-1 bg-white border rounded-md overflow-hidden ">
-          <div className="flex flex-col items-center justify-between">
-            <div className="relative aspect-video w-full">
-              <Image
-                src="https://picsum.photos/300/200"
-                fill
-                style={{ objectFit: "cover" }}
-              />
-              <div className="flex flex-col">
-                <div className="">Name</div>
-                <div className="">others</div>
+    <div className="w-full max-w-[1140px] mx-auto space-y-4">
+      <h1 className="font-bold text-2xl ">Сургалтууд</h1>
+      <div>
+        <div className="grid grid-cols-4 gap-2 w-full">
+          {courses?.record?.data.map((course) => (
+            <div className="col-span-1 bg-white border rounded-md overflow-hidden relative">
+              <div className="flex flex-col justify-between h-full">
+                <Link href={"/"} className="flex flex-col">
+                  <div className="relative aspect-[16/9] w-full">
+                    <Image
+                      alt="Picture of the Course"
+                      src={course.image || "https://picsum.photos/200/300"}
+                      fill
+                      style={{ objectFit: "cover" }}
+                    />
+                  </div>
+                  <div className="text-sm relative h-[3.5rem my-2 px-3">
+                    {course.name}
+                  </div>
+                </Link>
+                <div className="px-3 mb-2">others</div>
               </div>
             </div>
-          </div>
+          ))}
         </div>
       </div>
     </div>

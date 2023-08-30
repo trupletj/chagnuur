@@ -45,7 +45,12 @@ export default function Header() {
           <div className="flex items-center justify-between mr-10">
             <Link href="/" className="flex space-x-1 items-end">
               <div className="relative w-8 h-8">
-                <Image src={logo} fill style={{ objectFit: "contain" }} />
+                <Image
+                  src={logo}
+                  fill
+                  style={{ objectFit: "contain" }}
+                  alt="Chagnuur logo"
+                />
               </div>
               <h2 className="text-2xl font-bold  text-bottom relative bottom-[-5px]">
                 Chagnuur.
@@ -61,7 +66,7 @@ export default function Header() {
           <div
             className={`flex-1 justify-self-center   md:block md:pb-0 md:mt-0`}
           >
-            <ul className="items-center justify-center md:justify-start space-y-8 md:flex md:space-x-4 md:space-y-0 text-sm leading-[20px] font-[600] text-[1rem] ">
+            <ul className="items-center justify-center md:justify-start space-y-2 md:flex md:space-x-2 md:space-y-0 text-sm leading-[20px] font-[600] text-[1rem] ">
               {session && (
                 <li
                   className={`px-4 h-8 flex items-center rounded-2xl ${

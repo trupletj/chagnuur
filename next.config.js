@@ -14,6 +14,12 @@ const nextConfig = {
         port: "",
         pathname: "/**",
       },
+      {
+        protocol: "https",
+        hostname: "chagnuur.mn",
+        port: "",
+        pathname: "/**",
+      },
     ],
   },
 };
