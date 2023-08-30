@@ -14,9 +14,7 @@ import { options } from "/app/api/auth/[...nextauth]/options";
 
 export default async function Home() {
   const session = await getServerSession(options);
-  if (session) {
-    redirect("/dashboard");
-  }
+
   return (
     <main className=" bg-[#faf6f2] m-0 p-0">
       <Header />
