@@ -26,14 +26,16 @@ export const options = {
           }),
         });
 
-        const json = await response.json();
+        if (response.status == 200) {
+          const json = await response.json();
 
-        if (json) {
-          const { accessToken, user } = json;
-          const newUser = { ...user, accessToken };
-          return newUser;
-        } else {
-          return null;
+          if (json?.user && json?.accessToken) {
+            const { accessToken, user } = json;
+            const newUser = { ...user, accessToken };
+            return newUser;
+          } else {
+            return null;
+          }
         }
       },
     }),
