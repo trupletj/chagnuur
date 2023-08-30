@@ -1,7 +1,15 @@
 import React from "react";
 import Image from "next/image";
 
-function Courses() {
+async function getCourses() {
+  fetch("http://localhost:3000/api/courses");
+
+  // console.log(res);
+}
+
+async function Courses() {
+  getCourses();
+
   return (
     <div className="w-full ">
       <div className="grid grid-cols-4 gap-4">

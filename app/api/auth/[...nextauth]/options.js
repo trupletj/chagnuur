@@ -1,7 +1,4 @@
 import CredentialsProvider from "next-auth/providers/credentials";
-import { NextAuthOptions } from "next-auth";
-import { ResponseCookies } from "next/dist/compiled/@edge-runtime/cookies";
-import { error } from "console";
 
 export const options = {
   // Configure one or more authentication providers
@@ -58,7 +55,6 @@ export const options = {
       // Assign the accessToken to the `session` object, so it will be available on our app through `useSession` hooks
       if (token) {
         session.accessToken = token.accessToken;
-        console.log("session : ", session);
       }
       return session;
     },
