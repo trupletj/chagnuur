@@ -26,7 +26,9 @@
     "**/*.tsx",
     "app/layout.js",
     "app/api/auth/[...nextauth]/route.js",
-    "app/api/auth/[...nextauth]/options.js"
+    "app/api/auth/[...nextauth]/options.js",
+    "app/courses/layout.jsx",
+    "app/dashboard/layout.js"
   ],
   "exclude": ["node_modules"]
 }
