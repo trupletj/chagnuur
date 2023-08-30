@@ -5,6 +5,7 @@ import Educators from "../components/Home/Educators";
 import WhySec from "../components/Home/WhySec";
 import Rest from "../components/Home/Rest";
 import Illustration from "../components/Home/Illustration";
+import Header from "components/Footer";
 import Footer from "../components/Footer";
 
 import { getServerSession } from "next-auth/next";
@@ -18,6 +19,7 @@ export default async function Home() {
   }
   return (
     <main className=" bg-[#faf6f2] m-0 p-0">
+      <Header />
       {/* main image  */}
       <LandingPage />
       {/* explore learning - carousel*/}

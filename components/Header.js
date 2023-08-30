@@ -37,7 +37,7 @@ export default function Header() {
             </a>
           </div>
         </div>
-        <div className="absolute right-0 top-[80px] bg-white md:bg-opacity-0 md:relative">
+        <div className="absolute right-0 md:top-[5px] top-[80px] bg-white md:bg-opacity-0 md:relative">
           <div
             className={`flex-1 justify-self-center ml-20 mt-8 md:block md:pb-0 md:mt-0 ${
               navbar ? "block" : "hidden"
