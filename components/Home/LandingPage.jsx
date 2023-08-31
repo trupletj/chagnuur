@@ -1,6 +1,7 @@
 import React from "react";
 import Image from "next/image";
 import bg from "assets/landing.png";
+import Link from "next/link";
 
 function LandingPage() {
   return (
@@ -30,9 +31,12 @@ function LandingPage() {
               </div>
             </div>
             <div className="mt-10 space-x-0 space-y-10  text-lg flex flex-col lg:flex-row sm:space-x-2 sm:space-y-0 w-full max-w-[400px] mx-auto sm:flex-row sm:max-w-[800px] lg:max-w-[600px] lg:ml-0">
-              <button className="rounded-full text-white hover:bg-[#f44f6c] bg-[#fa888e] py-3 px-5  flex-1 lg:flex-none ">
-                Get Started
-              </button>
+              <Link
+                href={"/auth/register"}
+                className="rounded-full text-white hover:bg-[#f44f6c] bg-[#fa888e] py-3 px-5  flex-1 lg:flex-none "
+              >
+                Суралцаж Эхлэх
+              </Link>
 
               <button className="rounded-full text-[#d70e30] hover:bg-[#f8c4cc] bg-[#fde3e7] py-3 px-5 flex-1 lg:flex-none ">
                 Ausemed organization

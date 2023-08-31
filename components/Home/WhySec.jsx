@@ -9,14 +9,14 @@ function WhySec() {
     <div className="w-full py-[64px]">
       <div className="container flex flex-col justify-center space-y-10">
         <h1 className="text-[28px] font-[700] text-center">
-          Why you'll love learning with Ausmed
+          Яагаад Chagnuur.mn гэж?
         </h1>
         <ul className="flex text-[28px] font-[700] justify-between w-full max-w-[1024px] mx-auto">
           <li className="flex flex-col items-center">
             <div className="w-56 h-56 relative c">
               <Image src={easy} alt="alt" fill style={{ objectFit: "cover" }} />
             </div>
-            <h1 className="">Easy to use</h1>
+            <h1 className="">Хэрэглэхэд хялбар</h1>
           </li>
           <li className="flex flex-col items-center">
             <div className="w-56 h-56 relative">
@@ -27,7 +27,7 @@ function WhySec() {
                 style={{ objectFit: "cover" }}
               />
             </div>
-            <h1 className="">Effective education</h1>
+            <h1 className="">Үр дүнтэй боловсрол</h1>
           </li>
           <li className="flex flex-col items-center">
             <div className="w-56 h-56 relative">
@@ -38,7 +38,7 @@ function WhySec() {
                 style={{ objectFit: "cover" }}
               />
             </div>
-            <h1 className="">Reliable information</h1>
+            <h1 className="">Найдвартэй эх сурвалж</h1>
           </li>
         </ul>
       </div>

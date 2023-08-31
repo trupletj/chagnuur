@@ -1,6 +1,6 @@
 import React from "react";
 import Header from "components/Header";
-import WelcomeTitle from "components/WelcomeTitle";
+import WelcomeTitle from "components/UserProfile/WelcomeTitle";
 
 import { getServerSession } from "next-auth/next";
 import { options } from "/app/api/auth/[...nextauth]/options";

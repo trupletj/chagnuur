@@ -10,7 +10,7 @@ async function getCourses() {
       },
       body: JSON.stringify({
         modelName: "Course",
-        select: "name , image",
+        select: "name , image,id",
         relations: [],
         filters: [],
       }),
@@ -35,13 +35,16 @@ async function Courses() {
       <div>
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-2 w-full">
           {courses?.record?.data.map((course) => (
-            <div className="col-span-1 bg-white border rounded-md overflow-hidden relative">
+            <div
+              key={course.name}
+              className="col-span-1 bg-white border rounded-md overflow-hidden relative"
+            >
               <div className="flex flex-col justify-between h-full">
-                <Link href={"/"} className="flex flex-col">
+                <Link href={`/courses/${course.id}`} className="flex flex-col">
                   <div className="relative aspect-[16/9] w-full">
                     <Image
                       alt="Picture of the Course"
-                      src={course.image || "https://picsum.photos/200/300"}
+                      src={course.image}
                       fill
                       style={{ objectFit: "cover" }}
                     />

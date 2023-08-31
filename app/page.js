@@ -21,7 +21,7 @@ async function getCourses() {
       },
       body: JSON.stringify({
         modelName: "Course",
-        select: "name , image",
+        select: "name , image, id",
         relations: [],
         filters: [],
       }),
@@ -34,10 +34,32 @@ async function getCourses() {
   }
 }
 
+async function getCategories() {
+  try {
+    const res = await fetch(`${process.env.API_URL}/api/client/model/list`, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({
+        modelName: "Category",
+        select: "name ",
+        relations: [],
+        filters: [],
+      }),
+    });
+    const courses = await res.json();
+
+    return courses;
+  } catch (error) {
+    console.log(error);
+  }
+}
 export default async function Home() {
   const session = await getServerSession(options);
 
   const courses = await getCourses();
+  const categories = await getCategories();
 
   return (
     <main className=" bg-[#faf6f2] m-0 p-0">
@@ -45,7 +67,7 @@ export default async function Home() {
       {/* main image  */}
       <LandingPage />
       {/* explore learning - carousel*/}
-      <CoursesSec courses={courses} />
+      <CoursesSec courses={courses} categories={categories} />
       {/* What will you learn today? - LIST */}
       <Learnings />
       {/* Top health educators  */}

@@ -1,12 +1,14 @@
 import React from "react";
+import Logo from "components/Logo";
 
 function Footer() {
   return (
-    <div className="w-full pt-20 bg-[#001540] text-white">
+    <div className="w-full py-10 bg-[#001540] text-white">
       <div className="container">
-        <div className="w-full max-w-[900px] flex flex-col">
-          <div>Logo</div>
-          <ul className="flex ">
+        <div className="w-full max-w-[1140px] mx-auto flex justify-between">
+          <Logo />
+          <div className="">2023 он</div>
+          {/* <ul className="flex ">
             <li>
               <h1>Help and Feedback</h1>
             </li>
@@ -22,7 +24,7 @@ function Footer() {
             <li>
               <h1>Legals</h1>
             </li>
-          </ul>
+          </ul> */}
         </div>
       </div>
     </div>

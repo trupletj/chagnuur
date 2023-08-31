@@ -10,7 +10,8 @@ function NavbarUserButton({ pathname }) {
   const { data: session, status } = useSession();
   const [show, setShow] = React.useState(false);
 
-  useOutsideAlerter(wrapperRef, setShow);
+  useOutsideAlerter(wrapperRef, buttonRef, setShow);
+
   if (status === "loading") return null;
   if (!session)
     return (
@@ -23,9 +24,12 @@ function NavbarUserButton({ pathname }) {
     );
   return (
     <div className="relative flex space-x-1">
-      <div className="rounded-full text-white bg-[#f44f6c] hover:bg-[#fa888e] h-9 px-4 flex items-center  cursor-pointer ">
-        Төлбөр
-      </div>
+      <Link
+        href={"/dashboard"}
+        className="rounded-full text-white bg-[#f44f6c] hover:bg-[#fa888e] h-9 px-4 flex items-center  cursor-pointer "
+      >
+        Dashboard
+      </Link>
       <div
         ref={buttonRef}
         onClick={() => setShow(!show)}

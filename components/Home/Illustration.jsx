@@ -13,11 +13,11 @@ function Illustration() {
             <li className="grid grid-cols-10 ">
               <div className="col-span-4 flex flex-col items-start justify-center font-[400] text-[22px]">
                 <h1 className="font-[700] text-[40px] leading-[52px]">
-                  Learn your way
+                  Бие даан суралцах
                 </h1>
-                <spa>Video courses</spa>
-                <span>Lectures</span>
-                <span>Articles</span>
+                <spa>Видео хичээл</spa>
+                <span>Лекц</span>
+                <span>Өгүүллэг</span>
               </div>
               <div className="relative col-span-6">
                 <Image src={learn} alt="learn" />
@@ -26,9 +26,9 @@ function Illustration() {
             <li className="grid grid-cols-10 ">
               <div className="col-span-4 flex flex-col items-start justify-center font-[400] text-[22px]">
                 <h1 className="font-[700] text-[40px] leading-[52px]">
-                  Keep up-to-date
+                  Хамгийн чанартай
                 </h1>
-                <spa>All education is regularly reviewed for accuracy</spa>
+                <spa>Бүх сургалтынхаа чанарт байнга анхаарч сайжруулдаг</spa>
               </div>
               <div className="relative col-span-6">
                 <Image src={keep} alt="learn" />
@@ -37,9 +37,9 @@ function Illustration() {
             <li className="grid grid-cols-10 ">
               <div className="col-span-4 flex flex-col items-start justify-center font-[400] text-[22px]">
                 <h1 className="font-[700] text-[40px] leading-[52px]">
-                  Convenient for you
+                  Хэрэглэхд хялбар
                 </h1>
-                <spa>Full access on all devices</spa>
+                <spa>Бүх төрлийн төхөөрөмжөөс хандах боломж</spa>
               </div>
               <div className="relative col-span-6">
                 <Image src={convenient} alt="learn" />

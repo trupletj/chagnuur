@@ -65,9 +65,9 @@ function Learnings() {
           transition={{ duration: 0.5 }}
         >
           <h1 className="font-[700] text-[40px] leading-[52px] ">
-            What will you learn today?
+            Өнөөдөр ямар чиглэлээр суралцах вэ?
           </h1>
-          <p className="mt-2">New learning added every week!</p>
+          <p className="mt-2">Хичээлүүд байнга шинэчлэгдэх болно</p>
           <button className="py-[0.6rem] px-[1.5rem] bg-[#f44f6c] rounded-xl text-white font-[600] text-[1.25rem] mt-4 hover:bg-[#d70e30]">
             Get started
           </button>

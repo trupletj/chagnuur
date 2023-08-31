@@ -1,6 +1,7 @@
 "use client";
 import React, { useState, useRef, useLayoutEffect } from "react";
 import Image from "next/image";
+import Link from "next/link";
 
 //images
 import img1 from "assets/20200702_cover_v2.jpg";
@@ -33,25 +34,7 @@ const texts = [
   "Text 19fasdf ",
   "Text 20 fddd",
 ];
-const thumbs = [
-  {
-    url: img1,
-    title: "114  adsafasd fasd fasdf asdf asdf khgfds s sss",
-  },
-  { url: img2, title: "2" },
-  { url: img3, title: "3" },
-  { url: img4, title: "4" },
-  { url: img5, title: "5" },
-  { url: img3, title: "6" },
-  { url: img2, title: "7" },
-  { url: img5, title: "8" },
-  { url: "https://picsum.photos/600/300", title: "9" },
-  { url: img1, title: "10" },
-  { url: "https://picsum.photos/600/300", title: "11" },
-  { url: img3, title: "12" },
-  { url: "https://picsum.photos/600/300", title: "13" },
-];
-function CoursesSec({ courses }) {
+function CoursesSec({ courses, categories }) {
   const [currentCategory, setCurrentCategory] = useState(0);
   const categoryTitleRef = useRef(null);
   const carouselRef = useRef(null);
@@ -125,23 +108,6 @@ function CoursesSec({ courses }) {
     handleResize();
   }, [perPage, totalPages, currentPage, windowSize.width, parentWidth]);
 
-  if (!courses)
-    return (
-      <div className="animate-pulse flex space-x-4">
-        <div className="rounded-full bg-slate-700 h-10 w-10" />
-        <div className="flex-1 space-y-6 py-1">
-          <div className="h-2 bg-slate-700 rounded" />
-          <div className="space-y-3">
-            <div className="grid grid-cols-3 gap-4">
-              <div className="h-2 bg-slate-700 rounded col-span-2" />
-              <div className="h-2 bg-slate-700 rounded col-span-1" />
-            </div>
-            <div className="h-2 bg-slate-700 rounded" />
-          </div>
-        </div>
-      </div>
-    );
-
   return (
     <div className="py-20 ">
       <div className="container">
@@ -179,16 +145,29 @@ function CoursesSec({ courses }) {
             ref={categoryTitleRef}
             className="flex items-center flex-auto w-full space-x-2 no-scrollbar overflow-x-scroll scroll-smooth snap-x"
           >
-            {texts.map((text, index) => (
+            <li
+              className={`p-2 flex-shrink-0 font-bold snap-start cursor-pointer`}
+              onClick={() => setCurrentCategory(0)}
+            >
+              <p className=" my-[12px] leading-[20px] font-[600]">Бүгд</p>
+              <div
+                className={`h-[4px] selection ${
+                  currentCategory === 0 && "selection-active"
+                }`}
+              ></div>
+            </li>
+            {categories?.record.data.map((category, index) => (
               <li
-                key={index}
+                key={index + 1}
                 className={`p-2 flex-shrink-0 font-bold snap-start cursor-pointer`}
-                onClick={() => setCurrentCategory(index)}
+                onClick={() => setCurrentCategory(index + 1)}
               >
-                <p className=" my-[12px] leading-[20px] font-[600]">{text}</p>
+                <p className=" my-[12px] leading-[20px] font-[600]">
+                  {category.name}
+                </p>
                 <div
                   className={`h-[4px] selection ${
-                    currentCategory === index && "selection-active"
+                    currentCategory === index + 1 && "selection-active"
                   }`}
                 ></div>
               </li>
@@ -253,9 +232,12 @@ function CoursesSec({ courses }) {
                   Category
                 </span>
                 {/* title */}
-                <span className="font-[700] mt-[12px] text-[1rem] break-words cursor-pointer group-hover:text-[#6f7786]">
+                <Link
+                  href={`/courses/${course.id}`}
+                  className="font-[700] mt-[12px] text-[1rem] break-words cursor-pointer group-hover:text-[#6f7786]"
+                >
                   {course.name}
-                </span>
+                </Link>
                 {/* teacher */}
                 <span className="mt-[12px] text-[#4e545f] text-[0.875rem] font-[400]">
                   John Wick
