@@ -1,14 +1,22 @@
 "use client";
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import { useSession } from "next-auth/react";
+
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import NavbarUserButton from "./UserProfile/NavbarUserButton";
 import Logo from "./Logo";
 
+//hooks
+// import useWindowSize from "hooks/useWindowSize";
+import { useOutsideAlerter } from "hooks/useClickEvents";
+
 export default function Header() {
+  const wrapperRef = useRef(null);
+  const buttonRef = useRef(null);
   const activeClass = "bg-[#edeff2] ";
   const [navbar, setNavbar] = useState(false);
+  useOutsideAlerter(wrapperRef, buttonRef, setNavbar);
   const { data: session } = useSession();
   const pathname = usePathname();
   //background change
@@ -43,6 +51,7 @@ export default function Header() {
           <Logo />
         </div>
         <div
+          ref={wrapperRef}
           className={`absolute md:relative  right-5 md:right-0  md:top-[1px] top-[60px] shadow-[0_6px_32px_rgba(23,29,41,0.1)]  md:shadow-none bg-white md:bg-opacity-0  w-[225px] md:w-full   rounded-[12px] md:rounded-none p-4 md:p-0 md:flex ${
             navbar ? "block" : "hidden"
           }`}
@@ -92,10 +101,11 @@ export default function Header() {
           </div>
         </div>
         <div className="flex-1 flex items-center justify-end">
-          <NavbarUserButton />
+          <NavbarUserButton pathname={pathname} />
         </div>
         <div className="md:hidden flex items-center">
           <button
+            ref={buttonRef}
             className={`p-2 text-gray-700 rounded-md outline-none focus:border-gray-400 focus:border ${
               pathname === "/" && "text-white"
             }`}

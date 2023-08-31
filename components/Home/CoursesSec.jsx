@@ -51,7 +51,7 @@ const thumbs = [
   { url: img3, title: "12" },
   { url: "https://picsum.photos/600/300", title: "13" },
 ];
-function CoursesSec() {
+function CoursesSec({ courses }) {
   const [currentCategory, setCurrentCategory] = useState(0);
   const categoryTitleRef = useRef(null);
   const carouselRef = useRef(null);
@@ -124,6 +124,24 @@ function CoursesSec() {
     console.log("useEffect", totalPages);
     handleResize();
   }, [perPage, totalPages, currentPage, windowSize.width, parentWidth]);
+
+  if (!courses)
+    return (
+      <div className="animate-pulse flex space-x-4">
+        <div className="rounded-full bg-slate-700 h-10 w-10" />
+        <div className="flex-1 space-y-6 py-1">
+          <div className="h-2 bg-slate-700 rounded" />
+          <div className="space-y-3">
+            <div className="grid grid-cols-3 gap-4">
+              <div className="h-2 bg-slate-700 rounded col-span-2" />
+              <div className="h-2 bg-slate-700 rounded col-span-1" />
+            </div>
+            <div className="h-2 bg-slate-700 rounded" />
+          </div>
+        </div>
+      </div>
+    );
+
   return (
     <div className="py-20 ">
       <div className="container">
@@ -211,11 +229,11 @@ function CoursesSec() {
             className="flex overflow-x-scroll scroll-smooth space-x-3 w-full no-scrollbar "
             ref={carouselRef}
           >
-            {thumbs.map((thumb, index) => (
+            {courses?.record.data.map((course, index) => (
               <li
                 className="flex flex-col snap-start  text-[#171d29]  font-[500] mt-[12px] cursor-pointer group"
                 id={index}
-                key={thumb.title + index}
+                key={course.name + index}
               >
                 {/* image */}
                 <div
@@ -224,7 +242,8 @@ function CoursesSec() {
                 >
                   <Image
                     fill
-                    src={thumb.url}
+                    // placeholder="blur"
+                    src={course.image}
                     alt="custom image"
                     style={{ objectFit: "cover" }}
                   />
@@ -235,7 +254,7 @@ function CoursesSec() {
                 </span>
                 {/* title */}
                 <span className="font-[700] mt-[12px] text-[1rem] break-words cursor-pointer group-hover:text-[#6f7786]">
-                  {thumb.title}
+                  {course.name}
                 </span>
                 {/* teacher */}
                 <span className="mt-[12px] text-[#4e545f] text-[0.875rem] font-[400]">
