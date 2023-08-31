@@ -30,10 +30,10 @@ async function Courses() {
     <div>Loading</div>;
   }
   return (
-    <div className="w-full max-w-[1140px] mx-auto space-y-4">
+    <>
       <h1 className="font-bold text-2xl ">Сургалтууд</h1>
       <div>
-        <div className="grid grid-cols-4 gap-2 w-full">
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-2 w-full">
           {courses?.record?.data.map((course) => (
             <div className="col-span-1 bg-white border rounded-md overflow-hidden relative">
               <div className="flex flex-col justify-between h-full">
@@ -56,7 +56,7 @@ async function Courses() {
           ))}
         </div>
       </div>
-    </div>
+    </>
   );
 }
 

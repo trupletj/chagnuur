@@ -52,15 +52,19 @@ export const options = {
       // assign the accessToken to the `token` object, so it will be available on the `session` callback
       if (user) {
         token.accessToken = user.accessToken;
+        console.log("user", user);
       }
       return token;
     },
 
-    async session({ session, token }) {
+    async session({ session, user, token }) {
       // the token object is what returned from the `jwt` callback, it has the `accessToken` that we assigned before
       // Assign the accessToken to the `session` object, so it will be available on our app through `useSession` hooks
-      if (token) {
-        session.accessToken = token.accessToken;
+      if (user) {
+        console.log("user", user);
+        // session.accessToken = token.accessToken;
+      } else {
+        console.log("no user");
       }
       return session;
     },

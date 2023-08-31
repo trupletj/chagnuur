@@ -7,7 +7,7 @@ function WelcomeTitle() {
   return (
     <div className="flex space-x-2">
       <p className="font-bold text-xl italic">
-        Сайн байна уу, {session?.user.name}
+        Сайн байна уу, {JSON.stringify(session, null, 2)}
       </p>
       <span className="font-bold text-xl"> 👋</span>
     </div>

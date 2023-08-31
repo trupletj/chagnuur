@@ -35,8 +35,8 @@ export default function Header() {
       className={`w-full fixed top-0 z-30 h-[65px] ${
         pathname === "/"
           ? color
-            ? "bg-[#001540] text-white"
-            : "bg-[#001540]/[0] text-white"
+            ? "bg-[#001540] text-black md:text-white"
+            : "bg-[#001540]/[0] text-black md:text-white"
           : "bg-white text-[#4e545f] shadow-[0_0_12px_rgba(29,23,41,0.05)]"
       }`}
     >
@@ -52,7 +52,7 @@ export default function Header() {
                   alt="Chagnuur logo"
                 />
               </div>
-              <h2 className="text-2xl font-bold  text-bottom relative bottom-[-5px]">
+              <h2 className="text-2xl font-bold  text-bottom relative bottom-[-5px] hidden md:block">
                 Chagnuur.
               </h2>
             </Link>
@@ -112,7 +112,9 @@ export default function Header() {
         </div>
         <div className="md:hidden flex items-center">
           <button
-            className="p-2 text-gray-700 rounded-md outline-none focus:border-gray-400 focus:border"
+            className={`p-2 text-gray-700 rounded-md outline-none focus:border-gray-400 focus:border ${
+              pathname === "/" && "text-white"
+            }`}
             onClick={() => setNavbar(!navbar)}
           >
             {navbar ? (
