@@ -3,10 +3,8 @@ import { useState, useEffect } from "react";
 import { useSession } from "next-auth/react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import NavbarUserButton from "./UseraProfile/NavbarUserButton";
-
-import Image from "next/image";
-import logo from "assets/logo.png";
+import NavbarUserButton from "./UserProfile/NavbarUserButton";
+import Logo from "./Logo";
 
 export default function Header() {
   const activeClass = "bg-[#edeff2] ";
@@ -42,21 +40,7 @@ export default function Header() {
     >
       <div className="justify-start container items-center flex space-x-2 relative h-full">
         <div>
-          <div className="flex items-center justify-between mr-10">
-            <Link href="/" className="flex space-x-1 items-end">
-              <div className="relative w-8 h-8">
-                <Image
-                  src={logo}
-                  fill
-                  style={{ objectFit: "contain" }}
-                  alt="Chagnuur logo"
-                />
-              </div>
-              <h2 className="text-2xl font-bold  text-bottom relative bottom-[-5px] hidden md:block">
-                Chagnuur.
-              </h2>
-            </Link>
-          </div>
+          <Logo />
         </div>
         <div
           className={`absolute md:relative  right-5 md:right-0  md:top-[1px] top-[60px] shadow-[0_6px_32px_rgba(23,29,41,0.1)]  md:shadow-none bg-white md:bg-opacity-0  w-[225px] md:w-full   rounded-[12px] md:rounded-none p-4 md:p-0 md:flex ${

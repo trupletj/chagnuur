@@ -1,11 +1,5 @@
 "use client";
-import React, {
-  useState,
-  useRef,
-  useEffect,
-  useLayoutEffect,
-  useMemo,
-} from "react";
+import React, { useState, useRef, useLayoutEffect } from "react";
 import Image from "next/image";
 
 //images
