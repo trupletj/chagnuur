@@ -56,7 +56,6 @@ function CoursesSec({ courses, categories }) {
 
   const onPageChange = (goTo) => {
     let index;
-    console.log(perPage);
     index = goTo * perPage - perPage;
     carouselRef.current.scrollLeft =
       carouselRef?.current?.children[index].offsetLeft -
@@ -104,7 +103,6 @@ function CoursesSec({ courses, categories }) {
           carouselRef.current.firstChild.clientWidth
       )
     );
-    console.log("useEffect", totalPages);
     handleResize();
   }, [perPage, totalPages, currentPage, windowSize.width, parentWidth]);
 

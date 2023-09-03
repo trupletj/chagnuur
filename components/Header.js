@@ -66,7 +66,7 @@ export default function Header() {
                     pathname === "/dashboard" && activeClass
                   }`}
                 >
-                  <Link href="/dashboard">Нүүр</Link>
+                  <Link href="/dashboard">Dashboard</Link>
                 </li>
               )}
               <li

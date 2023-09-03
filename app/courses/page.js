@@ -14,6 +14,7 @@ async function getCourses() {
         relations: [],
         filters: [],
       }),
+      next: { revalidate: 60 },
     });
     const courses = await res.json();
 

@@ -12,6 +12,7 @@ function SignIn() {
   const passwordRef = useRef(null);
   const searchParams = useSearchParams();
   const searchError = searchParams.get("error");
+  const callbackUrl = searchParams.get("callbackUrl");
 
   function ValidateEmail(mail) {
     if (/^[a-zA-Z0-9]+@(?:[a-zA-Z0-9]+\.)+[A-Za-z]+$/.test(mail)) {
@@ -38,7 +39,7 @@ function SignIn() {
       const result = await signIn("credentials", {
         email: emailRef.current,
         password: passwordRef.current,
-        callbackUrl: `/dashboard`,
+        callbackUrl: callbackUrl || `/dashboard`,
       });
     }
   };
@@ -73,13 +74,13 @@ function SignIn() {
         <button
           onClick={onSubmit}
           type="submit"
-          className="text-white bg-red-300 rounded-md p-2 mt-2 w-full"
+          className="text-white bg-red-400 rounded-md p-2 mt-2 w-full"
         >
           Нэвтрэх
         </button>
       </form>
-      <div className="w-full h-[1px] bg-black my-4"></div>
-      <p className="">
+      <div className="w-full h-[1px] bg-gray-300 my-4"></div>
+      <p className="text-sm">
         Шинээр бүртгэл үүсгэх үү?{" "}
         <Link href={"/auth/register"} className="underline">
           Бүртгүүлэх

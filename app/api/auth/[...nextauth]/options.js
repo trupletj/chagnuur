@@ -20,7 +20,7 @@ export const options = {
       async authorize(credentials) {
         const { email, password } = credentials;
 
-        const response = await fetch("http://103.168.56.223/api/auth/login", {
+        const response = await fetch(`${process.env.API_URL}/api/auth/login`, {
           method: "POST",
           headers: { "Content-Type": "application/json" },
           body: JSON.stringify({
@@ -50,22 +50,16 @@ export const options = {
     async jwt({ token, user }) {
       // the user object is what returned from the Credentials login, it has `accessToken` from the server `/login` endpoint
       // assign the accessToken to the `token` object, so it will be available on the `session` callback
-      if (user) {
-        token.accessToken = user.accessToken;
-        console.log("user", user);
-      }
-      return token;
+
+      return { ...token, ...user };
     },
 
     async session({ session, user, token }) {
       // the token object is what returned from the `jwt` callback, it has the `accessToken` that we assigned before
       // Assign the accessToken to the `session` object, so it will be available on our app through `useSession` hooks
-      if (user) {
-        console.log("user", user);
-        // session.accessToken = token.accessToken;
-      } else {
-        console.log("no user");
-      }
+
+      session.user = token;
+
       return session;
     },
   },

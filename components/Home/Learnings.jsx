@@ -2,32 +2,7 @@
 import React, { useRef, useState, useLayoutEffect } from "react";
 import { motion } from "framer-motion";
 
-const data = [
-  {
-    title: "123 ",
-    list: ["1", "2", "1", "2", "1", "2", "1", "2", "1", "2", "1", "2"],
-  },
-  {
-    title: " 321",
-    list: ["1", "2", "1", "2", "1", "2", "1", "2", "1", "2", "1"],
-  },
-  {
-    title: " 123",
-    list: ["1", "2", "1", "2", "1", "2", "1", "2", "1", "2", "1"],
-  },
-  {
-    title: "321 ",
-    list: ["1", "2", "1", "2", "1", "2", "1", "2", "1", "2", "1"],
-  },
-  {
-    title: "123 ",
-    list: ["1", "2", "1", "2", "1", "2", "1", "2", "1", "2", "1"],
-  },
-  { title: "123 ", list: ["1", "2"] },
-  { title: "12313 231 ", list: ["1", "2"] },
-];
-
-function Learnings() {
+function Learnings({ subjects }) {
   const carouselRef = useRef(null);
 
   const [isFirst, setIsFirst] = useState(true);
@@ -39,7 +14,6 @@ function Learnings() {
     ) {
       carouselRef.current.scrollLeft -=
         carouselRef.current.firstChild.clientWidth;
-      console.log("SS", carouselRef.current.scrollLeft);
     } else {
       setIsFirst(true);
     }
@@ -50,10 +24,10 @@ function Learnings() {
     ) {
       carouselRef.current.scrollLeft +=
         carouselRef.current.firstChild.clientWidth;
-      console.log("SS", carouselRef.current.scrollLeft);
     }
     setIsFirst(false);
   };
+  if (!subjects) return null;
 
   return (
     <div className="w-full py-20 pl-[150px]">
@@ -102,11 +76,11 @@ function Learnings() {
             ref={carouselRef}
             className="grid grid-flow-col space-x-4 overflow-x-scroll scroll-smooth  snap-x  items-start relative no-scrollbar"
           >
-            {data.map((data, i) => (
+            {subjects?.record?.data?.map((data, i) => (
               <li className="bg-white rounded-xl w-[300px] snap-start flex-shrink-0 break-words p-[16px]">
-                <h1> {data.title}</h1>
-                {data.list.map((_, i) => (
-                  <p>{_}</p>
+                <h1 className="font-bold text-lg mb-2"> {data.name}</h1>
+                {data.childrens.map((_, i) => (
+                  <p className="font-normal">{_?.name}</p>
                 ))}
               </li>
             ))}

@@ -25,6 +25,35 @@ async function getCourses() {
         relations: [],
         filters: [],
       }),
+      revalidate: 60,
+    });
+    const courses = await res.json();
+
+    return courses;
+  } catch (error) {
+    console.log(error);
+  }
+}
+async function getSubjects() {
+  try {
+    const res = await fetch(`${process.env.API_URL}/api/client/model/list`, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({
+        modelName: "Subject",
+        select: "*",
+        relations: ["childrens"],
+        filters: [
+          {
+            field_name: "parent_id",
+            filter_type: "null",
+            filter_value: "1",
+          },
+        ],
+      }),
+      revalidate: 60,
     });
     const courses = await res.json();
 
@@ -60,6 +89,7 @@ export default async function Home() {
 
   const courses = await getCourses();
   const categories = await getCategories();
+  const subjects = await getSubjects();
 
   return (
     <main className=" bg-[#faf6f2] m-0 p-0">
@@ -69,7 +99,7 @@ export default async function Home() {
       {/* explore learning - carousel*/}
       <CoursesSec courses={courses} categories={categories} />
       {/* What will you learn today? - LIST */}
-      <Learnings />
+      <Learnings subjects={subjects} />
       {/* Top health educators  */}
       <Educators />
       {/* Why you'll love learning with Ausmed */}
