@@ -33,14 +33,17 @@ function LandingPage() {
             <div className="mt-10 space-x-0 space-y-10  text-lg flex flex-col lg:flex-row sm:space-x-2 sm:space-y-0 w-full max-w-[400px] mx-auto sm:flex-row sm:max-w-[800px] lg:max-w-[600px] lg:ml-0">
               <Link
                 href={"/auth/register"}
-                className="rounded-full text-white hover:bg-[#f44f6c] bg-[#fa888e] py-3 px-5  flex-1 lg:flex-none "
+                className="rounded-full text-white hover:bg-[#f44f6c] bg-[#fa888e] py-3 px-5  flex-1 lg:flex-none text-center"
               >
                 Суралцаж Эхлэх
               </Link>
 
-              <button className="rounded-full text-[#d70e30] hover:bg-[#f8c4cc] bg-[#fde3e7] py-3 px-5 flex-1 lg:flex-none ">
+              <Link
+                href={"/auth/register"}
+                className="rounded-full text-[#d70e30] hover:bg-[#f8c4cc] bg-[#fde3e7] py-3 px-5 flex-1 lg:flex-none text-center"
+              >
                 Ausemed organization
-              </button>
+              </Link>
             </div>
           </div>
         </div>

@@ -11,9 +11,9 @@ function WhySec() {
         <h1 className="text-[28px] font-[700] text-center">
           Яагаад Chagnuur.mn гэж?
         </h1>
-        <ul className="flex text-[28px] font-[700] justify-between w-full max-w-[1024px] mx-auto">
+        <ul className="flex flex-col md:flex-row space-y-6 md:space-y-0 text-[28px] font-[700] justify-between w-full max-w-[1024px] mx-auto">
           <li className="flex flex-col items-center">
-            <div className="w-56 h-56 relative c">
+            <div className="w-56 h-56 relative ">
               <Image src={easy} alt="alt" fill style={{ objectFit: "cover" }} />
             </div>
             <h1 className="">Хэрэглэхэд хялбар</h1>

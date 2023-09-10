@@ -23,6 +23,10 @@ module.exports = {
         "gradient-conic":
           "conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))",
       },
+      gridTemplateColumns: {
+        sidebar: "80% auto", //for sidebar layout
+        "sidebar-collapsed": "90% auto", //for collapsed sidebar layout
+      },
     },
   },
 

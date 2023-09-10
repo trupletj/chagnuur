@@ -30,23 +30,25 @@ function Learnings({ subjects }) {
   if (!subjects) return null;
 
   return (
-    <div className="w-full py-20 pl-[150px]">
-      <div className="grid grid-cols-4 w-full space-x-6">
+    <div className="w-full py-20  md:pl-[150px]">
+      <div className="grid grid-cols-4 w-full space-y-6 md:space-x-6">
         <motion.div
-          className="col-span-1 flex flex-col items-start"
+          className="col-span-4 md:col-span-1 flex flex-col items-start"
           initial={{ opacity: 0, y: 200, scale: 0.5 }}
           whileInView={{ opacity: 1, y: 0, scale: 1 }}
           transition={{ duration: 0.5 }}
         >
-          <h1 className="font-[700] text-[40px] leading-[52px] ">
+          <h1 className="font-[700] md:text-[40px] md:leading-[52px] px-10 md:px-0 text-[24px]">
             Өнөөдөр ямар чиглэлээр суралцах вэ?
           </h1>
-          <p className="mt-2">Хичээлүүд байнга шинэчлэгдэх болно</p>
-          <button className="py-[0.6rem] px-[1.5rem] bg-[#f44f6c] rounded-xl text-white font-[600] text-[1.25rem] mt-4 hover:bg-[#d70e30]">
+          <p className="mt-2 text-center md:text-left w-full">
+            Хичээлүүд байнга шинэчлэгдэх болно
+          </p>
+          <button className="py-[0.6rem] px-[1.5rem] bg-[#f44f6c] rounded-xl text-white font-[600] text-[1.25rem] mt-4 hover:bg-[#d70e30] hidden md:block">
             Get started
           </button>
         </motion.div>
-        <div className=" col-span-3 flex">
+        <div className="col-span-4  md:col-span-3  flex">
           {isFirst ? (
             <div className="relative w-[150px] left-[66px] h-full flex items-center  z-10 "></div>
           ) : (

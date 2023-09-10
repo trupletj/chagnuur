@@ -52,7 +52,7 @@ export default function Header() {
         </div>
         <div
           ref={wrapperRef}
-          className={`absolute md:relative  right-5 md:right-0  md:top-[1px] top-[60px] shadow-[0_6px_32px_rgba(23,29,41,0.1)]  md:shadow-none bg-white md:bg-opacity-0  w-[225px] md:w-full   rounded-[12px] md:rounded-none p-4 md:p-0 md:flex ${
+          className={`absolute lg:relative  right-5 lg:right-0  lg:top-[1px] top-[60px] shadow-[0_6px_32px_rgba(23,29,41,0.1)]  lg:shadow-none bg-white lg:bg-opacity-0  w-[225px] lg:w-full   rounded-[12px] lg:rounded-none p-4 lg:p-0 lg:flex ${
             navbar ? "block" : "hidden"
           }`}
         >
@@ -103,7 +103,7 @@ export default function Header() {
         <div className="flex-1 flex items-center justify-end">
           <NavbarUserButton pathname={pathname} />
         </div>
-        <div className="md:hidden flex items-center">
+        <div className="lg:hidden flex items-center">
           <button
             ref={buttonRef}
             className={`p-2 text-gray-700 rounded-md outline-none focus:border-gray-400 focus:border ${

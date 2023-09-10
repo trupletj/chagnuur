@@ -1,5 +1,4 @@
 import { NextResponse } from "next/server";
-import { cookies } from "next/headers";
 
 export async function GET(request) {
   const res = await fetch("https://admin.chagnuur.mn/api/course/find", {

@@ -3,14 +3,14 @@ import Image from "next/image";
 import { notFound } from "next/navigation";
 import SingleCourseControlBar from "components/Courses/SingleCourseControlBar";
 import parse from "html-react-parser";
+import { getServerSession } from "next-auth/next";
+import { options } from "/app/api/auth/[...nextauth]/options";
 
-async function getCourse(id) {
+async function getCourse(id, headers) {
   try {
     const res = await fetch(`${process.env.API_URL}/api/course/find`, {
       method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
+      headers,
       body: JSON.stringify({
         modelName: "Course",
         id,
@@ -32,7 +32,18 @@ async function getCourse(id) {
 }
 
 async function SingleCoursePage({ params }) {
-  const course = await getCourse(params.id);
+  let headers;
+
+  const session = await getServerSession(options);
+  if (!session) {
+    headers = { "Content-Type": "application/json" };
+  } else {
+    headers = {
+      "Content-Type": "application/json",
+      Authorization: `Bearer ${session.accessToken}`,
+    };
+  }
+  const course = await getCourse(params.id, headers);
   if (!course) {
     notFound();
   }
