@@ -42,7 +42,7 @@ function LandingPage() {
                 href={"/auth/register"}
                 className="rounded-full text-[#d70e30] hover:bg-[#f8c4cc] bg-[#fde3e7] py-3 px-5 flex-1 lg:flex-none text-center"
               >
-                Ausemed organization
+                Бүртгэл үүсгэх
               </Link>
             </div>
           </div>
