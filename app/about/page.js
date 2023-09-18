@@ -8,6 +8,47 @@ import img4 from "assets/about/basaa-min-polyu2tueu4mnx0cro5a2k884magsrenf4wysru
 import img5 from "assets/about/tseej-zureg-B.Oyuntugs-min-polyupdyyuziek3l3xwbqejadv79xhw7i8kmbex3gw.jpg";
 import img6 from "assets/about/boogii-pom0ga03kjsriqgzxbsoydio8hfme3gcf729ijk0cw.jpg";
 
+const data = [
+  {
+    img: img1,
+    name: "Н.Баялагмаа",
+    title: " АУ-ны доктор",
+    position: "Үүсгэн байгуулагч, тэргүүн",
+    position2: "Дотрын ахлах зэргийн эмч",
+  },
+  {
+    img: img2,
+    title: " АУ-ны магистр",
+    name: "Н.Бат-Эрдэнэ",
+    position: "Үүсгэн байгуулагч, контент бүтээгч",
+    position2: "Дотрын ахлах зэргийн эмч",
+  },
+  {
+    img: img3,
+    name: "Д.Цагаан",
+    title: " АУ-ны магистр",
+    position: "Анхны тусламжийн сургагч багш, контент бүтээгч",
+    position2: "Сэхээн амьдруулалт, яаралтай тусламжийн эмч",
+  },
+  {
+    img: img4,
+    title: "АУ-ны магистр",
+    name: "Ц.Басбиш",
+    position: "Контент бүтээгч",
+  },
+  {
+    img: img5,
+    name: "Б.Оюунтөгс",
+    title: "АУ-ны доктор",
+    position: "Контент бүтээгч",
+  },
+  {
+    img: img6,
+    name: "Н.Болор-Эрдэнэ",
+    position: "Медиа, мэдээллийн технологи хариуцсан мэргэжилтэн",
+  },
+];
+
 function About() {
   return (
     <>
@@ -32,103 +73,29 @@ function About() {
       </div>
       <div className="w-full bg-white">
         <div className="w-full max-w-[900px] flex flex-wrap mx-auto px-10 pt-10 ">
-          <div className="w-1/3">
-            <div className="w-full  ">
-              <div className="w-full aspect-square relative">
+          {data.map((item, i) => (
+            <div
+              key={i}
+              className="w-full md:w-1/2 lg:w-1/3 flex flex-col items-center space-y-4"
+            >
+              <div className="w-[200px] h-[200px] relative">
                 <Image
-                  src={img1}
+                  src={item.img}
                   fill
                   style={{
-                    objectFit: "contain",
+                    objectFit: "cover",
+                    borderRadius: "50%",
                   }}
                 />
               </div>
-              <h1>Н.Баялагмаа, АУ-ны доктор</h1>
-              <h1 className="">Үүсгэн байгуулагч, тэргүүн</h1>
-              <h1 className="">Дотрын ахлах зэргийн эмч</h1>
+              <h1 className="font-bold text-xl text-[#001540]">{item.name}</h1>
+              <p className="text-[#8798bf]">{item.title}</p>
+              <p className="text-[#8798bf]">{item.position}</p>
+              {item.position2 && (
+                <p className="text-[#8798bf]">{item.position2}</p>
+              )}
             </div>
-          </div>
-          <div className="w-1/3">
-            <div className="w-full  ">
-              <div className="w-full aspect-square relative">
-                <Image
-                  src={img2}
-                  fill
-                  style={{
-                    objectFit: "contain",
-                  }}
-                />
-              </div>
-              <h1>Н.Бат-Эрдэнэ, АУ-ны магистр</h1>
-              <h1 className="">Үүсгэн байгуулагч, контент бүтээгч</h1>
-              <h1 className="">Дотрын ахлах зэргийн эмч</h1>
-            </div>
-          </div>
-          <div className="w-1/3">
-            <div className="w-full  ">
-              <div className="w-full aspect-square relative">
-                <Image
-                  src={img3}
-                  fill
-                  style={{
-                    objectFit: "contain",
-                  }}
-                />
-              </div>
-              <h1>Д.Цагаан, АУ-ны магистр</h1>
-              <h1 className="">
-                Анхны тусламжийн сургагч багш, контент бүтээгч
-              </h1>
-              <h1 className="">Сэхээн амьдруулалт, яаралтай тусламжийн эмч</h1>
-            </div>
-          </div>
-          <div className="w-1/3">
-            <div className="w-full  ">
-              <div className="w-full aspect-square relative">
-                <Image
-                  src={img4}
-                  fill
-                  style={{
-                    objectFit: "contain",
-                  }}
-                />
-              </div>
-              <h1>Ц.Басбиш, СУ-ны доктор</h1>
-              <h1 className="">Контент бүтээгч</h1>
-            </div>
-          </div>
-          <div className="w-1/3">
-            <div className="w-full  ">
-              <div className="w-full aspect-square relative">
-                <Image
-                  src={img5}
-                  fill
-                  style={{
-                    objectFit: "contain",
-                  }}
-                />
-              </div>
-              <h1>Б.Оюунтөгс, АУ-ны доктор</h1>
-              <h1 className="">Контент бүтээгч</h1>
-            </div>
-          </div>
-          <div className="w-1/3">
-            <div className="w-full  ">
-              <div className="w-full aspect-square relative">
-                <Image
-                  src={img6}
-                  fill
-                  style={{
-                    objectFit: "contain",
-                  }}
-                />
-              </div>
-              <h1>Н.Болор-Эрдэнэ</h1>
-              <h1 className="">
-                Медиа, мэдээллийн технологи хариуцсан мэргэжилтэн
-              </h1>
-            </div>
-          </div>
+          ))}
         </div>
       </div>
     </>
